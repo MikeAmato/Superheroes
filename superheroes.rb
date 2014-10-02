@@ -50,7 +50,7 @@ begin
   # TODO: fix this
   hero = Famoushero.new
 
-  # hero.delete_all
+  hero.delete_all
 
   # TODO: insert superheroes here.
   hero.insert_superhero('Superman', 'Clark Kent',  'yes', 'Invincible', 'Lex Luther')
