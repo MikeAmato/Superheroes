@@ -7,7 +7,7 @@ class Famoushero
 
   def initialize
     # TODO: change the dbname to 'superheroes'
-    @conn = PG.connect(:dbname =>'superheroes', :host => 'localhost', :user => "Mike", :password => 'kuribod')
+    @conn = PG.connect(:dbname =>'superheroes', :host => 'localhost')
     # TODO: change the insert to insert a superhero
     @conn.prepare("insert_superhero", "INSERT INTO superheroes (hero_name, alter_ego, has_cape, power, arch_nemesis) VALUES ($1, $2, $3, $4, $5)")
   end
@@ -32,11 +32,11 @@ class Famoushero
         # dob = row['dob'] || 'null'
         if row['has_cape'] == 'no'
           cape = ' not'
-        else 
+        else
           cape = ''
         end
          puts "#{row['hero_name']} who really is #{row['alter_ego']} has this power, #{row['power']},
-         does#{cape} wear a cape, and fights #{row['arch_nemesis']}\n\n" 
+         does#{cape} wear a cape, and fights #{row['arch_nemesis']}\n\n"
       end
     end
   end
